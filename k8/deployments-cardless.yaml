@@ -1,5 +1,4 @@
 # Description : cardless micro service 
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,8 +15,8 @@ spec:
     spec:
       containers:
         - name: cardless-service
-          image: gcr.io/lbgretailpocs/cardless-service:latest
+          image: hari5115/cardless-service:1.0.0
           ports:
-            - containerPort: 8080
+            - containerPort: 9090
           imagePullPolicy: Always
 
