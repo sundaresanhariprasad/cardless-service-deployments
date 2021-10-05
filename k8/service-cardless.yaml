@@ -1,0 +1,13 @@
+# cardless service load balancer
+kind: Service
+apiVersion: v1
+metadata:
+  name: cardless-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: cardless-service

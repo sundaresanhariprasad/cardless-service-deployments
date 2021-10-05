@@ -1,0 +1,23 @@
+# Description : cardless micro service 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cardless-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cardless-service
+  template:
+    metadata:
+      labels:
+        app: cardless-service
+    spec:
+      containers:
+        - name: cardless-service
+          image: gcr.io/lbgretailpocs/cardless-service:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+
