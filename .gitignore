@@ -8,7 +8,6 @@ infra/.terraform*
 infra/terraform.tfstate
 infra/terraform.tfstate.backup
 
-
 infratest/.terraform*
 infratest/terraform.tfstate
 infratest/terraform.tfstate.backup
