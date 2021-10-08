@@ -4,5 +4,5 @@ metadata:
     name: cm-cardless-service
 data:  
     # Backend Service
-    new.service.url: http://cards-newplatform/api/newPlatform/getOldPlafformCards
-    old.service.url: http://cards-backend/api/cardBackend/getNewPlafformCards
+    new.service.url: http://cards-newplatform/api/newplatform/getCard
+    old.service.url: http://cards-backend/api/legacy/getCard
