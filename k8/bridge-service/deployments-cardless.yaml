@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cardless-service
-          image: hari5115/cardless-service:2.0.0
+          image: gcr.io/lbgretailpocs/bridge-service:latest
           ports:
             - containerPort: 9090
           env:

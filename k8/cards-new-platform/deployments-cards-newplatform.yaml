@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cards-newplatform
-          image: hari5115/cards-newplatform:1.0.0
+          image: gcr.io/lbgretailpocs/cards-new-platform:latest
           ports:
             - containerPort: 9093
           imagePullPolicy: Always

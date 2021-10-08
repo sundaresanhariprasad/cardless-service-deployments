@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cards-backend
-          image: hari5115/cards-backend:1.0.0
+          image: gcr.io/lbgretailpocs/cards-legacy:latest
           ports:
             - containerPort: 9092
           imagePullPolicy: Always
