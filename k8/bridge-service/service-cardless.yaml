@@ -1,4 +1,4 @@
-# cardless service load balancer
+# cardless bridge service load balancer
 kind: Service
 apiVersion: v1
 metadata:
