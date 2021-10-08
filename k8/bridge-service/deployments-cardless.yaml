@@ -1,0 +1,33 @@
+# Description : cardless micro service 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cardless-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cardless-service
+  template:
+    metadata:
+      labels:
+        app: cardless-service
+    spec:
+      containers:
+        - name: cardless-service
+          image: hari5115/cardless-service:2.0.0
+          ports:
+            - containerPort: 9090
+          env:
+            - name: new.service.url
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-cardless-service
+                  key: new.service.url
+            - name: old.service.url
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-cardless-service
+                  key: old.service.url
+          imagePullPolicy: Always
+

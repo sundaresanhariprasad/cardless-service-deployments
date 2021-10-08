@@ -1,0 +1,22 @@
+# Description : cards-backend micro service 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cards-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cards-backend
+  template:
+    metadata:
+      labels:
+        app: cards-backend
+    spec:
+      containers:
+        - name: cards-backend
+          image: hari5115/cards-backend:1.0.0
+          ports:
+            - containerPort: 9092
+          imagePullPolicy: Always
+

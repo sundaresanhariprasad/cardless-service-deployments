@@ -1,0 +1,13 @@
+# cardless service load balancer
+kind: Service
+apiVersion: v1
+metadata:
+  name: cards-backend
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 9093
+      protocol: TCP
+  selector:
+    app: cards-backend

@@ -1,0 +1,22 @@
+# Description : cards-backend micro service 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cards-newplatform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cards-newplatform
+  template:
+    metadata:
+      labels:
+        app: cards-newplatform
+    spec:
+      containers:
+        - name: cards-newplatform
+          image: hari5115/cards-newplatform:1.0.0
+          ports:
+            - containerPort: 9093
+          imagePullPolicy: Always
+

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: cm-cardless-service
+data:  
+    # Backend Service
+    new.service.url: http://localhost:9093/api/newPlatform/getOldPlafformCards
+    old.service.url: http://localhost:9092/api/cardBackend/getNewPlafformCards
