@@ -41,12 +41,4 @@ steps:
         echo "Error 103: Invalid Directory"
       fi
 
-- id: 'setup initial application'
-  name: gcr.io/cloud-builders/gcloud
-  entrypoint: sh
-  args: 
-  - '-c'
-  - |
-      cd k8/
-      ./Install-k8.sh
 
