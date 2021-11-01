@@ -9,7 +9,6 @@ terraform {
 provider "google" {
   project = "${var.project}"
   region  = "${var.primary_region}"
-  credentials = file("../keys/terraform-user-retail.json")
 }
 
 resource "google_container_cluster" "cluster" {
