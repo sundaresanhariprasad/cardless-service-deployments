@@ -2,7 +2,7 @@ steps:
 
 # Applied onky for master branch
 - id: 'branch name'
-  name: 'main'
+  name: 'master'
   entrypoint: 'sh'  
   args: 
   - '-c'
