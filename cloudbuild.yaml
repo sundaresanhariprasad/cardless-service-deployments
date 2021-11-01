@@ -1,16 +1,4 @@
 steps:
-
-# Applied onky for master branch
-- id: 'branch name'
-  name: 'master'
-  entrypoint: 'sh'  
-  args: 
-  - '-c'
-  - | 
-      echo "***********************"
-      echo "$BRANCH_NAME"
-      echo "***********************"
-
 # Initialise Terraform Modules
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
