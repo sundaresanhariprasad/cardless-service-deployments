@@ -1,0 +1,54 @@
+steps:
+
+# Applied onky for master branch
+- id: 'branch name'
+  name: 'main'
+  entrypoint: 'sh'  
+  args: 
+  - '-c'
+  - | 
+      echo "***********************"
+      echo "$BRANCH_NAME"
+      echo "***********************"
+
+# Initialise Terraform Modules
+- id: 'tf init'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - |
+      if [ -d "infra/" ]; then
+        cd infra/
+        terraform init
+      else
+        echo "Error 100: Invalid Directory"
+      fi 
+
+# Print the plan 
+- id: 'tf plan'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      if [ -d "infra/" ]; then
+        cd infra/
+        terraform plan
+      else
+        echo "Error 101: Invalid Directory"
+      fi 
+
+# Create the resources
+- id: 'tf apply'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      if [ -d "infra/" ]; then
+        cd infra/      
+        terraform apply -auto-approve
+      else
+        echo "Error 103: Invalid Directory"
+      fi
